@@ -62,11 +62,14 @@ namespace CarInsurance.Controllers
 		public ActionResult Quote(int? id)
 		{
 			var insuree = db.Insurees.Find(id);
+			decimal quote = insuree.Quote;
+
+			// age logic
+			quote = (DateTime.Now.Year - insuree.DateOfBirth.Year > 25) ? quote + 25.00M : quote;
 
 			return View(insuree);
 
-			//// age logic
-			//quote = (DateTime.Now.Year - data.dob.Value.Year > 25) ? quote + 25.00M : quote;
+			
 			//quote = (DateTime.Now.Year - data.dob.Value.Year < 18) ? quote + 25.00M : quote;
 			//quote = (DateTime.Now.Year - data.dob.Value.Year > 100) ? quote + 25.00M : quote;
 
