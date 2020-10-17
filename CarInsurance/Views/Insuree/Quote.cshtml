@@ -1,0 +1,20 @@
+﻿@model CarInsurance.Models.Insuree
+
+@{
+	ViewBag.Title = "Quote";
+}
+
+<h2>Quote</h2>
+
+<div>
+	<h4>MONTHLY QUOTE:</h4>
+	<hr />
+	<dl class="dl-horizontal">
+		<dd>
+			@Html.DisplayFor(model => model.Quote)
+		</dd>
+	</dl>
+</div>
+<p>
+	@Html.ActionLink("Back to List", "Index")
+</p>
