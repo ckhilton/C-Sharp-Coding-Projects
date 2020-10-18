@@ -162,6 +162,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CYA_Images\AutoQuotePage.jpg" />
+    <Content Include="Content\CYA_Images\Home.jpg" />
+    <Content Include="Content\CYA_Images\HomePage.png" />
+    <Content Include="Content\CYA_Images\HomeQuote.jpg" />
+    <Content Include="Content\CYA_Images\Life.jpg" />
+    <Content Include="Content\CYA_Images\LifeQuotePage.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
