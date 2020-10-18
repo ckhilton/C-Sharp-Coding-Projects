@@ -213,7 +213,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Home_Insurance.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Insuree\Create.cshtml" />
@@ -222,8 +222,11 @@
     <Content Include="Views\Insuree\Edit.cshtml" />
     <Content Include="Views\Insuree\Index.cshtml" />
     <Content Include="Views\Insuree\Quote.cshtml" />
+    <Content Include="Views\Home\Life_Insurance.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Insurance\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
