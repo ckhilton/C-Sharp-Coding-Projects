@@ -53,7 +53,7 @@ namespace CarInsurance.Controllers
 				db.Insurees.Add(insuree);
 				db.SaveChanges();
 				Details(insuree.Id);
-				return View("Details");
+				return View("Quote");
 			}
 
 			return View(insuree);
