@@ -24,7 +24,7 @@ namespace CarInsurance.Controllers
 
           public ActionResult Contact()
           {
-               ViewBag.Message = "Your contact page.";
+               ViewBag.Message = "ADDRESS & PHONE:";
 
                return View();
           }

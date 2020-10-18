@@ -11,7 +11,29 @@ img {
 	z-index: -1;
 	width: 100vw;
 	height: 100vh;
+	opacity: .75;
 	overflow: -moz-hidden-unscrollable
+}
+
+#car-image {
+	opacity: 0.75;	
+	width: 100vw;
+	padding-left: 45vw;
+	padding-right 45vw;
+}
+
+#contact-page {
+	
+	font-weight: bolder;
+}
+
+#admin-page {
+	opacity: 0.3;
+}
+
+#jumbo {
+	background-color: transparent;
+	opacity: 0.8;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -31,5 +53,17 @@ img {
 input,
 select,
 textarea {
-	max-width: 280px;
+	max-width: 200px;
+}
+
+
+input.form-control.text-box.single-line {
+	background-color: lightyellow;
+}
+
+footer {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
 }

@@ -1,17 +1,24 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+	ViewBag.Title = "CONTACT US!";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+@section head{
+	<img src="/Content/CYA_Images/Contact.jpg" alt="" />
+}
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div id="contact-page">
+	<br /><br /><br /><br />
+	<h1>@ViewBag.Title</h1>
+	<h3>@ViewBag.Message</h3>
+
+	<h3 class="text-uppercase">
+		123 LALA LANE<br />
+		LALALAND, EARTH<br />
+		<p>425.555.0100</p>
+	</h3>
+
+	<address class="text-uppercase">
+		<H3>Support:</H3><H4>Support@example.com</H4><br />
+		<H3>Marketing:</H3><H4>Marketing@example.com</H4>
+	</address>
+</div>

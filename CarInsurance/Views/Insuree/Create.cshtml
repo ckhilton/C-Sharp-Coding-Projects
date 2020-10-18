@@ -1,23 +1,24 @@
 ﻿@model CarInsurance.Models.Insuree
+@section head{
+	<div>
+		<img id="car-image" opacity="0.3" src="/Content/CYA_Images/AutoQuotePage1.jpg" alt="" />
+	</div>
+}
 
 @{
 	ViewBag.Title = "Create";
 }
 
-@section head{
-	<img src="/Content/CYA_Images/AutoQuotePage.jpg" alt="" />
-}
-
-
 <br />
-<h2>GET YOUR FREE QUOTE!</h2>
+<h2>GET YOUR FREE AUTO QUOTE!</h2>
+<br />
 
 @using (Html.BeginForm())
 {
 	@Html.AntiForgeryToken()
 
-	<div class="form-horizontal">
-		<h4>Insuree Information Form</h4>
+	<div id="auto-quote" class="form-horizontal text-size">
+		<h4>(Insuree Information Form)</h4>
 		<hr />
 		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 		<div class="form-group">

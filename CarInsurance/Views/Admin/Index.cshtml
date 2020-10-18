@@ -1,8 +1,11 @@
 ﻿@model IEnumerable<CarInsurance.Models.Insuree>
+@section head{
+	<img id="admin-page" src="/Content/CYA_Images/Home.jpg" alt="" />
+}
 
 <p>
 	<h2>Auto Quotes</h2>
-	@Html.ActionLink("Add New Quote", "Create")
+	@Html.ActionLink("Add New Quote", "Create", "Insuree")
 	<br />
 </p>
 <table class="table">
