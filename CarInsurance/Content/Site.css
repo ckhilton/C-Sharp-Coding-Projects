@@ -1,21 +1,17 @@
-﻿/*body {	
+﻿body {
 	padding-top: 50px;
-	padding-bottom: 20px;
-}
-*/
-body {
-	padding-top: 60px;
-	padding-bottom: 20px;
-	height: 100%;
-	width: 100%;
-	
+	padding-bottom: 0px;
+	height: 100vh;
+	width: 100vw;
+	overflow: -moz-hidden-unscrollable;
 }
 
 img {
-	position: absolute;
+	position: fixed;
 	z-index: -1;
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
+	overflow: -moz-hidden-unscrollable
 }
 
 /* Set padding to keep content from hitting the edges */
