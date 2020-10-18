@@ -224,9 +224,7 @@
     <Content Include="Views\Insuree\Quote.cshtml" />
     <Content Include="Views\Home\Life_Insurance.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Insurance\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

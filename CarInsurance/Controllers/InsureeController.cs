@@ -52,39 +52,40 @@ namespace CarInsurance.Controllers
 			{
 				db.Insurees.Add(insuree);
 				db.SaveChanges();
-				return RedirectToAction("Index");
+				Details(insuree.Id);
+				return View("Details");				
 			}
 
 			return View(insuree);
 		}
 
-		//GET: Quote
-		public ActionResult Quote(int? id)
-		{
-			var insuree = db.Insurees.Find(id);
-			decimal quote = insuree.Quote;
+		////GET: Quote
+		//public ActionResult Quote(int? id)
+		//{
+		//	var insuree = db.Insurees.Find(id);
+		//	decimal quote = insuree.Quote;
 
-			// age logic
-			quote = (DateTime.Now.Year - insuree.DateOfBirth.Year > 25) ? quote + 25.00M : quote;
+		//	// age logic
+		//	quote = (DateTime.Now.Year - insuree.DateOfBirth.Year > 25) ? quote + 25.00M : quote;
 
-			return View(insuree);
+		//	return View(insuree);
 
 			
-			//quote = (DateTime.Now.Year - data.dob.Value.Year < 18) ? quote + 25.00M : quote;
-			//quote = (DateTime.Now.Year - data.dob.Value.Year > 100) ? quote + 25.00M : quote;
+		//	//quote = (DateTime.Now.Year - data.dob.Value.Year < 18) ? quote + 25.00M : quote;
+		//	//quote = (DateTime.Now.Year - data.dob.Value.Year > 100) ? quote + 25.00M : quote;
 
-			//// automobile logic
-			//quote = (data.car_year < 2000) ? quote + 25.00M : quote;
-			//quote = (data.car_year > 2015) ? quote + 25.00M : quote;
-			//quote = (data.car_make.ToLower() == "porsche") ? quote + 25.00M : quote;
-			//quote = (data.car_make.ToLower() == "porsche" && data.car_model.Contains("carrera")) ? quote + 25.00M : quote;
+		//	//// automobile logic
+		//	//quote = (data.car_year < 2000) ? quote + 25.00M : quote;
+		//	//quote = (data.car_year > 2015) ? quote + 25.00M : quote;
+		//	//quote = (data.car_make.ToLower() == "porsche") ? quote + 25.00M : quote;
+		//	//quote = (data.car_make.ToLower() == "porsche" && data.car_model.Contains("carrera")) ? quote + 25.00M : quote;
 
-			//// risk logic
-			////TO DO quote = (data.tickets > 4) ? quote + (data.tickets * 10).Value : quote;
-			////TO DO quote = (data.dui > 0) ? quote + (Decimal.Multiply(quote, .25M)): quote;
-			//quote = (data.coverage_type.ToLower() == "full") ? quote + (Decimal.Multiply(quote, .25M)) : quote;
+		//	//// risk logic
+		//	////TO DO quote = (data.tickets > 4) ? quote + (data.tickets * 10).Value : quote;
+		//	////TO DO quote = (data.dui > 0) ? quote + (Decimal.Multiply(quote, .25M)): quote;
+		//	//quote = (data.coverage_type.ToLower() == "full") ? quote + (Decimal.Multiply(quote, .25M)) : quote;
 
-		}
+		//}
 
 
 
