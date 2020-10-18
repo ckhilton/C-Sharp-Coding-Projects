@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<CarInsurance.Models.Insuree>
 
 <p>
-	<h2>C.Y.A. AUTO QUOTES</h2>
-	@Html.ActionLink("New Insuree", "Create")
+	<h2>Auto Quotes</h2>
+	@Html.ActionLink("Add New Quote", "Create")
 	<br />
 </p>
 <table class="table">
@@ -18,6 +18,9 @@
 		</th>
 		<th>
 			@Html.DisplayNameFor(model => model.Quote)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Created)
 		</th>
 		<th></th>
 	</tr>
@@ -37,6 +40,9 @@
 			<td>
 				@Html.DisplayFor(modelItem => item.Quote)
 			</td>
+			<th>
+				@Html.DisplayFor(modelItem => item.Created)
+			</th>
 			<td>
 				@Html.ActionLink("Details", "Details", new { id = item.Id }) |
 				@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
