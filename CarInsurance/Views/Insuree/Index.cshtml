@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<CarInsurance.Models.Insuree>
 
-
 <p>
+	<h2>C.Y.A. AUTO QUOTES</h2>
+	@Html.ActionLink("New Insuree", "Create")
 	<br />
-	@Html.ActionLink("Create New Insuree", "Create")
 </p>
 <table class="table">
 	<tr>
@@ -17,27 +17,8 @@
 			@Html.DisplayNameFor(model => model.EmailAddress)
 		</th>
 		<th>
-			@Html.DisplayNameFor(model => model.DateOfBirth)
+			@Html.DisplayNameFor(model => model.Quote)
 		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.CarYear)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.CarMake)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.CarModel)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.DUI)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.SpeedingTickets)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.CoverageType)
-		</th>
-		<th></th>
 		<th></th>
 	</tr>
 
@@ -45,46 +26,73 @@
 	{
 		<tr>
 			<td>
-				@Html.DisplayFor(modelItem => item.FirstName)
+				@Html.DisplayFor(modelItem => item.LastName)
 			</td>
 			<td>
-				@Html.DisplayFor(modelItem => item.LastName)
+				@Html.DisplayFor(modelItem => item.FirstName)
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.EmailAddress)
 			</td>
 			<td>
-				@Html.DisplayFor(modelItem => item.DateOfBirth)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.CarYear)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.CarMake)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.CarModel)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.DUI)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.SpeedingTickets)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.CoverageType)
-			</td>
-			@*<td>
 				@Html.DisplayFor(modelItem => item.Quote)
-			</td>*@
+			</td>
 			<td>
 				@Html.ActionLink("Details", "Details", new { id = item.Id }) |
-				@Html.ActionLink("Edit", "Edit", new { id = item.Id }) | <br />
-				@Html.ActionLink("Quote", "Quote", new { id = item.Id }) |
-				@Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
-
+				@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.Id })
 			</td>
 		</tr>
 	}
-
 </table>
+
+
+
+
+
+
+@*<th>
+		@Html.DisplayNameFor(model => model.DateOfBirth)
+	</th>
+	<th>
+		@Html.DisplayNameFor(model => model.CarYear)
+	</th>
+	<th>
+		@Html.DisplayNameFor(model => model.CarMake)
+	</th>
+	<th>
+		@Html.DisplayNameFor(model => model.CarModel)
+	</th>
+	<th>
+		@Html.DisplayNameFor(model => model.DUI)
+	</th>
+	<th>
+		@Html.DisplayNameFor(model => model.SpeedingTickets)
+	</th>
+	<th>
+		@Html.DisplayNameFor(model => model.CoverageType)
+	</th>*@
+
+
+
+@*<td>
+		@Html.DisplayFor(modelItem => item.DateOfBirth)
+	</td>
+	<td>
+		@Html.DisplayFor(modelItem => item.CarYear)
+	</td>
+	<td>
+		@Html.DisplayFor(modelItem => item.CarMake)
+	</td>
+	<td>
+		@Html.DisplayFor(modelItem => item.CarModel)
+	</td>
+	<td>
+		@Html.DisplayFor(modelItem => item.DUI)
+	</td>
+	<td>
+		@Html.DisplayFor(modelItem => item.SpeedingTickets)
+	</td>
+	<td>
+		@Html.DisplayFor(modelItem => item.CoverageType)
+	</td>*@
