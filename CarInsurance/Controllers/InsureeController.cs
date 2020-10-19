@@ -54,16 +54,15 @@ namespace CarInsurance.Controllers
 				decimal quote = 50.00M;
 
 				// AGE LOGIC
-				quote = (DateTime.Now.Year - insuree.DateOfBirth.Year < 19) ? quote + 100.00M : quote;
-				quote = (DateTime.Now.Year - insuree.DateOfBirth.Year >= 19) ? quote + 100.00M : quote;
-				quote = (DateTime.Now.Year - insuree.DateOfBirth.Year <= 25) ? quote + 100.00M : quote;
+				quote = (DateTime.Now.Year - insuree.DateOfBirth.Year <= 18) ? quote + 100.00M : quote;
+				quote = (DateTime.Now.Year - insuree.DateOfBirth.Year >= 19 && insuree.DateOfBirth.Year <= 25) ? quote + 50.00M : quote;
 				quote = (DateTime.Now.Year - insuree.DateOfBirth.Year > 25) ? quote + 25.00M : quote;
 
 				// AUTO LOGIC
 				quote = (insuree.CarYear < 2000) ? quote + 25.00M : quote;
 				quote = (insuree.CarYear > 2015) ? quote + 25.00M : quote;
 				quote = (insuree.CarMake.ToUpper() == "PORSCHE") ? quote + 25.00M : quote;
-				quote = (insuree.CarMake.ToUpper() == "PORSCHE" && insuree.CarModel.ToUpper().Contains("CARRERA")) ? quote + 50.00M : quote;
+				quote = (insuree.CarMake.ToUpper() == "PORSCHE" && insuree.CarModel.ToUpper().Contains("CARRERA")) ? quote + 25.00M : quote;
 
 				// RISK LOGIC
 				quote = (insuree.SpeedingTickets > 0) ? quote + (insuree.SpeedingTickets * 10) : quote;
