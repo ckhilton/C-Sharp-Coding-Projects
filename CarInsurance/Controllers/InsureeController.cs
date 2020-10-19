@@ -50,6 +50,27 @@ namespace CarInsurance.Controllers
 		{
 			if (ModelState.IsValid)
 			{
+				//SET 'decimal quote' TO BASE OF $50/MONTH
+				decimal quote = 50.00M;
+
+				// AGE LOGIC
+				quote = (DateTime.Now.Year - insuree.DateOfBirth.Year < 19) ? quote + 100.00M : quote;
+				quote = (DateTime.Now.Year - insuree.DateOfBirth.Year >= 19) ? quote + 100.00M : quote;
+				quote = (DateTime.Now.Year - insuree.DateOfBirth.Year <= 25) ? quote + 100.00M : quote;
+				quote = (DateTime.Now.Year - insuree.DateOfBirth.Year > 25) ? quote + 25.00M : quote;
+
+				// AUTO LOGIC
+				quote = (insuree.CarYear < 2000) ? quote + 25.00M : quote;
+				quote = (insuree.CarYear > 2015) ? quote + 25.00M : quote;
+				quote = (insuree.CarMake.ToUpper() == "PORSCHE") ? quote + 25.00M : quote;
+				quote = (insuree.CarMake.ToUpper() == "PORSCHE" && insuree.CarModel.ToUpper().Contains("CARRERA")) ? quote + 50.00M : quote;
+
+				// RISK LOGIC
+				quote = (insuree.SpeedingTickets > 0) ? quote + (insuree.SpeedingTickets * 10) : quote;
+				quote = (insuree.DUI == true) ? quote + (decimal.Multiply(quote, .25M)): quote;
+				quote = (insuree.CoverageType == true) ? quote + (decimal.Multiply(quote, .50M)) : quote;
+
+				insuree.Quote = quote;
 				db.Insurees.Add(insuree);
 				db.SaveChanges();
 				Details(insuree.Id);
@@ -58,55 +79,5 @@ namespace CarInsurance.Controllers
 
 			return View(insuree);
 		}
-
-		//GET: Insuree/Quote/5
-		public ActionResult Quote(int? id)
-		{
-
-			if (id == null)
-			{
-				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			}
-			Insuree insuree = db.Insurees.Find(id);
-			if (insuree == null)
-			{
-				return HttpNotFound();
-			}
-			return View(insuree);
-		}
-
-		// POST: Insuree/Quote/5
-		// To protect from overposting attacks, enable the specific properties you want to bind to, for 
-		// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public ActionResult Quote([Bind(Include = "Id,FirstName,LastName,EmailAddress,DateOfBirth,CarYear,CarMake,CarModel,DUI,SpeedingTickets,CoverageType,Quote")] Insuree insuree)
-		{
-			if (ModelState.IsValid)
-			{
-				decimal quote = insuree.Quote;
-
-				// age logic
-				quote = (DateTime.Now.Year - insuree.DateOfBirth.Year < 19) ? quote + 100.00M : quote;
-
-				
-
-
-				//quote = (DateTime.Now.Year - data.dob.Value.Year < 18) ? quote + 25.00M : quote;
-				//quote = (DateTime.Now.Year - data.dob.Value.Year > 100) ? quote + 25.00M : quote;
-
-				//// automobile logic
-				//quote = (data.car_year < 2000) ? quote + 25.00M : quote;
-				//quote = (data.car_year > 2015) ? quote + 25.00M : quote;
-				//quote = (data.car_make.ToLower() == "porsche") ? quote + 25.00M : quote;
-				//quote = (data.car_make.ToLower() == "porsche" && data.car_model.Contains("carrera")) ? quote + 25.00M : quote;
-
-				//// risk logic
-				////TO DO quote = (data.tickets > 4) ? quote + (data.tickets * 10).Value : quote;
-				////TO DO quote = (data.dui > 0) ? quote + (Decimal.Multiply(quote, .25M)): quote;
-				//quote = (data.coverage_type.ToLower() == "full") ? quote + (Decimal.Multiply(quote, .25M)) : quote;
-			}
-			return View(insuree);
-		}	
 	}
 }

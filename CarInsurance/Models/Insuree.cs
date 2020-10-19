@@ -14,6 +14,11 @@ namespace CarInsurance.Models
 
 	public partial class Insuree
 	{
+		//public Insuree()
+		//{
+		//	Quote = 50.00M;
+		//}
+
 		public int Id { get; set; }
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
