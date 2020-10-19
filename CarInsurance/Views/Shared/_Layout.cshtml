@@ -34,12 +34,13 @@
 	<div class="container body-content">
 		@RenderBody()
 	</div>
+	<footer>
+		<h5>&copy; @DateTime.Now.Year - CYA INSURANCE GROUP</h5>
+	</footer>
 
 	@Scripts.Render("~/bundles/jquery")
 	@Scripts.Render("~/bundles/bootstrap")
 	@RenderSection("scripts", required: false)
 </body>
-<footer>
-	<h3>&copy; @DateTime.Now.Year - CYA INSURANCE GROUP</h3>
-</footer>
+
 </html>
